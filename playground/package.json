@@ -1,7 +1,6 @@
 {
   "name": "@ds-makersun/playground",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@ds-makersun/dozen": "^0.1.0",
     "@testing-library/jest-dom": "^5.17.0",
