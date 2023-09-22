@@ -10,7 +10,7 @@ import Pill from '../../atoms/Pill';
 import TaskHome from '../../molecules/TaskHome';
 import './TaskList.scss';
 
-type Task = {
+export type TaskEntity = {
   id: string;
   label: string;
   state: 'new' | 'active' | 'completed' | string;
@@ -20,7 +20,7 @@ type Task = {
 export interface TaskListProps {
   className?: string;
   ariaLabel?: string;
-  tasks?: Task[];
+  tasks?: TaskEntity[];
   state?: 'complete-tasks' | 'reorder';
 }
 
