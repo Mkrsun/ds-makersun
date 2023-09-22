@@ -10,7 +10,6 @@
     "@storybook/addon-a11y": "^7.2.3",
     "lerna": "^7.1.5"
   },
-  "private": true,
   "workspaces": [
     "packages/dozen",
     "packages/manaier",
