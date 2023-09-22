@@ -1,0 +1,15 @@
+.ds-makersun-dozen-tab-option-container {
+    color:#BCBCBC;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 12px;
+    cursor: pointer;
+
+    &.active {
+        color: #333;
+        text-decoration-line: underline; 
+
+    }
+}

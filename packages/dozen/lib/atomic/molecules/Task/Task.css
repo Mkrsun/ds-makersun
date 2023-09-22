@@ -1,0 +1,27 @@
+.ds-makersun-dozen-task-container {
+  display: flex;
+  border: 1px solid #333333;
+  border-bottom: 2px solid #333333;
+  border-radius: 7px;
+  max-width: 350px;
+  cursor: pointer;
+  background-color: white;
+}
+.ds-makersun-dozen-task-container .left-side {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 8px;
+  height: 100%;
+  width: 85%;
+  user-select: none;
+  box-sizing: border-box;
+}
+.ds-makersun-dozen-task-container .right-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+}
+
+/*# sourceMappingURL=Task.css.map */

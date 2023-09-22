@@ -1,0 +1,80 @@
+{
+  "name": "@ds-makersun/dozen",
+  "version": "0.0.3-alpha.0",
+  "private": true,
+  "main": "lib/index.js",
+  "dependencies": {
+    "@rollup/plugin-terser": "^0.4.3",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.40",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "node-sass": "^9.0.0",
+    "react": "^18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "clean": "rm -rf lib",
+    "build:sass": "yarn sass src:lib",
+    "build:code:old": "yarn tsc --build tsconfig.json",
+    "build:code": "yarn rollup -c",
+    "build": "yarn clean && yarn build:sass && yarn build:code",
+    "build:sass:flow": "chokidar 'src/**/*.scss' -c 'sass src:lib'",
+    "build:code:flow": "yarn rollup -c",
+    "build:all:flow": "yarn clean && yarn build:sass:flow && yarn build:code:flow",
+    "dev": "concurrently \"yarn build:sass\" \"yarn build:sass:flow\" \"yarn build:code:flow\"",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "files": [
+    "lib"
+  ],
+  "devDependencies": {
+    "@rollup/plugin-image": "^3.0.2",
+    "@rollup/plugin-json": "^6.0.0",
+    "@svgr/rollup": "^8.1.0",
+    "@types/react-beautiful-dnd": "^13.1.4",
+    "autoprefixer": "^10.4.15",
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^8.2.0",
+    "node-sass": "^9.0.0",
+    "rollup": "^3.28.0",
+    "rollup-plugin-alias": "^2.2.0",
+    "rollup-plugin-analyzer": "^4.0.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-sass": "^1.12.20",
+    "rollup-plugin-serve": "^2.0.2",
+    "rollup-plugin-typescript2": "^0.35.0",
+    "sass": "^1.65.1",
+    "tslib": "^2.6.2",
+    "typescript": "^5.1.6"
+  }
+}

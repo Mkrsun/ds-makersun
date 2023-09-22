@@ -1,0 +1,28 @@
+.ds-makersun-dozen-swipeable-wrapper-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: relative;
+  width: fit-content;
+  overflow: hidden;
+
+  .overlay {
+    opacity: 0;
+  }
+
+  &.swiping {
+    .overlay {
+      opacity: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      pointer-events: none;
+      transition: transform 0.3s ease-in-out, background-color 500ms ease-in-out, opacity 100ms ease-in-out;
+    }
+  }
+    // SCSS Styles
+}

@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@ds-makersun/dozen/*": ["packages/dozen/src/*"],
+      "@ds-makersun/manaier/*": ["packages/manaier/src/*"]
+    }
+  }
+}

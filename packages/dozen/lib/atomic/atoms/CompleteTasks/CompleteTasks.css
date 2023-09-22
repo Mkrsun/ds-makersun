@@ -1,0 +1,22 @@
+.ds-makersun-dozen-complete-tasks-container {
+  display: flex;
+  width: 40px;
+  cursor: auto;
+  transition: transform 300ms ease-in-out;
+}
+.ds-makersun-dozen-complete-tasks-container.cursor-pointer {
+  cursor: pointer;
+}
+.ds-makersun-dozen-complete-tasks-container.is-active {
+  transform: scale(1);
+}
+.ds-makersun-dozen-complete-tasks-container.not-active {
+  opacity: 0.4;
+  transform: scale(0.9);
+}
+.ds-makersun-dozen-complete-tasks-container img {
+  width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=CompleteTasks.css.map */

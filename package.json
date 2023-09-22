@@ -1,0 +1,49 @@
+{
+  "name": "ds-makersun",
+  "version": "1.0.0",
+  "description": "A design system using Monorepo for hosting multiple componentes and styles for different projects",
+  "main": "index.js",
+  "repository": "https://github.com/DevMan-VR/ds-makersun.git",
+  "author": "DevMan-VR <manuelmartinezf.dev@gmail.com>",
+  "license": "CC-BY-NC-ND-4.0",
+  "dependencies": {
+    "@storybook/addon-a11y": "^7.2.3",
+    "lerna": "^7.1.5"
+  },
+  "private": true,
+  "workspaces": [
+    "packages/dozen",
+    "packages/manaier",
+    "playground"
+  ],
+  "devDependencies": {
+    "@storybook/react": "^7.2.3",
+    "@testing-library/dom": "^9.3.1",
+    "@testing-library/react": "^14.0.0",
+    "concurrently": "^8.2.0",
+    "eslint": "^8.47.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "plop": "^3.1.2",
+    "prettier": "^3.0.1",
+    "sass": "^1.65.1"
+  },
+  "scripts": {
+    "format": "prettier --write \"src/**/*.{js,ts,tsx}\"",
+    "lint": "lint-staged",
+    "start": "react-app-rewired  -r tsconfig-paths/register start",
+    "start:dev": "PORT=4000 yarn workspace @ds-makersun/playground start",
+    "dev": "concurrently \"yarn workspace @ds-makersun/dozen dev\" \"yarn workspace @ds-makersun/manaier dev\" \"PORT=4000 yarn workspace @ds-makersun/playground start\"",
+    "build": "yarn workspace @ds-makersun/dozen build && yarn workspace @ds-makersun/manaier build",
+    "test": "jest",
+    "commit": "yarn lint && yarn git-cz",
+    "eject": "react-scripts eject",
+    "create:component": "plop component",
+    "create:page": "plop page",
+    "create:service": "plop service",
+    "start:json-server": "node mockServer/server.js",
+    "build:all": "yarn workspace @ds-makersun/dozen build && yarn workspace @ds-makersun/manaier build",
+    "build:dozen": "yarn workspace @ds-makersun/dozen build",
+    "build:manaier": "yarn workspace @ds-makersun/manaier build"
+  }
+}

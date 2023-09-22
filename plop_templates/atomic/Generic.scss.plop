@@ -1,0 +1,4 @@
+.ds-makersun-{{dashCase package}}-{{dashCase name}}-container {
+    display: flex;
+    // SCSS Styles
+}

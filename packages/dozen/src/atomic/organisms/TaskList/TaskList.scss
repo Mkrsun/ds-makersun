@@ -1,0 +1,24 @@
+.ds-makersun-dozen-task-list-container {
+    display: flex;
+    flex-direction: column;
+    & > div {
+        margin-top: 1rem;
+        &.is-dragging {
+            position: absolute;
+        }
+
+        
+    }
+
+    
+    // SCSS Styles
+}
+
+.order-number-relative {
+        position: absolute;
+
+        .order-number-absolute {
+            position: absolute;
+            left: -30px;
+        }
+    }

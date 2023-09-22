@@ -1,0 +1,24 @@
+.ds-makersun-dozen-complete-tasks-container {
+    display: flex;
+    width: 40px;
+    cursor: auto;
+    transition: transform 300ms ease-in-out;
+
+    &.cursor-pointer {
+        cursor: pointer;
+    }
+
+    &.is-active {
+        transform: scale(1);
+    }
+
+    &.not-active {
+        opacity: 0.4;
+        transform: scale(0.9);
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}

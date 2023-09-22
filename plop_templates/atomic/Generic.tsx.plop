@@ -1,0 +1,26 @@
+;
+import './{{properCase name}}.scss';
+
+
+export interface {{properCase name}}Props {
+    className?: string
+    ariaLabel?: string
+}
+
+const {{properCase name}}: React.FC<{{properCase name}}Props> = ({
+  className='',
+  ariaLabel
+}) => {
+  return (
+    <div 
+      className={`ds-makersun-{{dashCase package}}-{{dashCase name}}-container ${className}`}
+      data-testid={`ds-makersun-{{dashCase package}}-{{dashCase name}}`}
+      aria-label={ariaLabel}
+      tabIndex={0}
+    >
+      {/* Contenido del componente */}
+    </div>
+  );
+};
+
+export default {{properCase name}};

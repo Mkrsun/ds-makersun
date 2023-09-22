@@ -1,0 +1,29 @@
+{
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "plugins": ["prettier"],
+  "rules": {
+    // Reglas de ESLint
+    "no-console": 2,
+    "no-unused-vars": 2,
+
+    // Reglas de TypeScript
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+
+    // Reglas de React
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+
+    // Reglas de Prettier
+    "prettier/prettier": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "env": {
+    "node": true
+  }
+}

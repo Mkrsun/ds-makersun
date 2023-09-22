@@ -1,0 +1,9 @@
+import { render, screen } from '@testing-library/react';
+import {{pascalCase name}} from './{{pascalCase name}}';
+
+test('{{pascalCase name}}: Base test', () => {
+  render(<{{pascalCase name}} />);
+  const element = screen.getByTestId('ds-makersun-{{dashCase package}}-{{dashCase name}}');
+  expect(element).toBeVisible();
+  expect(element).toHaveClass('ds-makersun-{{dashCase package}}-{{dashCase name}}-container');
+});

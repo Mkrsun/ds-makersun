@@ -1,0 +1,35 @@
+.ds-makersun-dozen-tabs-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    // SCSS Styles
+
+    .ds-makersun-dozen-tabs-header-container {
+        display: flex;
+    }
+
+    .ds-makersun-dozen-tabs-content-container {
+        display: flex;
+        position: relative;
+        width: 100%;
+        transition: transform 0.3s ease-in-out;
+
+        & > div {
+            flex: 0 0 100%;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 2rem;
+        }
+        
+        // .tab-dummy {
+        //     width: calc(100vw - 2rem);
+        //     height: 100vh;
+        // }
+    }
+}
