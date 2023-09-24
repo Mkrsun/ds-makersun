@@ -1,6 +1,6 @@
 {
   "name": "@ds-makersun/dozen",
-  "version": "0.0.12-alpha.0",
+  "version": "0.0.13-alpha.0",
   "main": "lib/index.js",
   "dependencies": {
     "@hello-pangea/dnd": "^16.3.0",
