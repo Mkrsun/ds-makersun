@@ -42,6 +42,8 @@
     "start:json-server": "node mockServer/server.js",
     "build:all": "yarn workspace @ds-makersun/dozen build && yarn workspace @ds-makersun/manaier build",
     "build:dozen": "yarn workspace @ds-makersun/dozen build",
-    "build:manaier": "yarn workspace @ds-makersun/manaier build"
+    "build:manaier": "yarn workspace @ds-makersun/manaier build",
+    "lerna:build:dozen": "lerna run build --scope=@ds-makersun/dozen",
+    "lerna:publish:dozen": "cd packages/dozen && npm publish --access public"
   }
 }
