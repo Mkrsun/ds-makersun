@@ -3,6 +3,7 @@
   "version": "0.0.12-alpha.0",
   "main": "lib/index.js",
   "dependencies": {
+    "@hello-pangea/dnd": "^16.3.0",
     "@rollup/plugin-terser": "^0.4.3",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -13,7 +14,6 @@
     "@types/react-dom": "^18.2.7",
     "node-sass": "^9.0.0",
     "react": "^18.2.0",
-    "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
@@ -24,6 +24,7 @@
     "build:code:old": "yarn tsc --build tsconfig.json",
     "build:code": "yarn rollup -c",
     "build": "yarn clean && yarn build:sass && yarn build:code",
+    "build:dev": "yarn clean && yarn build:sass && yarn build:code",
     "build:sass:flow": "chokidar 'src/**/*.scss' -c 'sass src:lib'",
     "build:code:flow": "yarn rollup -c",
     "build:all:flow": "yarn clean && yarn build:sass:flow && yarn build:code:flow",
@@ -76,5 +77,5 @@
     "tslib": "^2.6.2",
     "typescript": "^5.1.6"
   },
-  "gitHead": "34aec357c7b611045712f9f52706be6a03d6d885"
+  "gitHead": "e80457a50cf563a9dd5941b4122971b282303080"
 }

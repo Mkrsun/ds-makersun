@@ -4,7 +4,7 @@ import {
   Droppable,
   Draggable,
   DropResult,
-} from 'react-beautiful-dnd';
+} from '@hello-pangea/dnd';
 
 import Pill from '../../atoms/Pill';
 import TaskHome from '../../molecules/TaskHome';
@@ -20,7 +20,7 @@ export type TaskEntity = {
 export interface TaskListProps {
   className?: string;
   ariaLabel?: string;
-  tasks?: TaskEntity[];
+  tasks: TaskEntity[];
   state?: 'complete-tasks' | 'reorder';
 }
 
@@ -30,7 +30,7 @@ const TaskList: React.FC<TaskListProps> = ({
   tasks,
   state = 'complete-tasks',
 }) => {
-  const [orderedTasks, setOrderedTasks] = useState(tasks);
+  const [orderedTasks, setOrderedTasks] = useState<TaskEntity[]>(tasks);
   const refs = useRef<{ [key: string]: HTMLDivElement | null }>({}).current;
   const [positionPerIndex, setPositionPerIndex] = useState<number[]>([]);
 
@@ -63,53 +63,67 @@ const TaskList: React.FC<TaskListProps> = ({
             tabIndex={0}
             {...providedDroppable.droppableProps}
           >
-            {orderedTasks?.map((task, index) => (
-              <Draggable
-                key={task.id}
-                draggableId={task.id}
-                index={index}
-                isDragDisabled={state !== 'reorder'}
-              >
-                {(providedDraggable, snapshotDraggable) => {
-                  const draggableRef = providedDraggable!
-                    .innerRef! as unknown as React.MutableRefObject<HTMLDivElement>;
-                  return (
-                    <div
-                      ref={(element) => {
-                        refs[task.id] = element;
-                        providedDraggable.innerRef(element);
-                      }}
-                      {...providedDraggable.draggableProps}
-                      {...providedDraggable.dragHandleProps}
-                      style={{
-                        ...providedDraggable.draggableProps.style,
-                        display: 'flex',
-                        top: `${
-                          draggableRef.current?.clientHeight * index + 30
-                        }px`,
-                      }}
-                    >
-                      <div className="order-number-relative">
-                        <Pill
-                          className="order-number-absolute"
-                          type="mini"
-                          value={snapshotDraggable.isDragging ? '?' : index + 1}
-                          style={{
-                            top: `${positionPerIndex[index] ?? 0}px`,
-                          }}
+            {orderedTasks?.map((task, index) => {
+              console.log('what is task and index?? ', {
+                taskId: task.id,
+                index,
+              });
+              return (
+                <Draggable
+                  key={task.id}
+                  draggableId={task.id}
+                  index={index}
+                  isDragDisabled={state !== 'reorder'}
+                >
+                  {(providedDraggable, snapshotDraggable) => {
+                    const draggableRef = providedDraggable!
+                      .innerRef as unknown as React.MutableRefObject<HTMLDivElement>;
+
+                    console.log(
+                      'what is providedDraggable and snapshotDraggable?',
+                      { providedDraggable, snapshotDraggable }
+                    );
+                    return (
+                      <div
+                        ref={(element) => {
+                          console.log({ refs, selectedTask: refs[task.id] });
+                          refs[task.id] = element;
+                          providedDraggable.innerRef(element);
+                        }}
+                        {...providedDraggable.draggableProps}
+                        {...providedDraggable.dragHandleProps}
+                        style={{
+                          ...providedDraggable.draggableProps.style,
+                          display: 'flex',
+                          top: `${
+                            draggableRef.current?.clientHeight * index + 30
+                          }px`,
+                        }}
+                      >
+                        <div className="order-number-relative">
+                          <Pill
+                            className="order-number-absolute"
+                            type="mini"
+                            value={
+                              snapshotDraggable.isDragging ? '?' : index + 1
+                            }
+                            style={{
+                              top: `${positionPerIndex[index] ?? 0}px`,
+                            }}
+                          />
+                        </div>
+
+                        <TaskHome
+                          key={task.id}
+                          label={task.label}
+                          gesturesEnabled={state === 'complete-tasks'}
                         />
                       </div>
-
-                      <TaskHome
-                        key={task?.id ?? index}
-                        label={task.label}
-                        gesturesEnabled={state === 'complete-tasks'}
-                      />
-                    </div>
-                  );
-                }}
-              </Draggable>
-            ))}
+                    );
+                  }}
+                </Draggable>
+              );
+            })}
             {providedDroppable.placeholder}
           </div>
         )}

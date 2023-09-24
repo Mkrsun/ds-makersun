@@ -8,26 +8,34 @@ import {
   CompleteTasks as CompletTaskIcon,
 } from '@ds-makersun/dozen';
 
-const tasks = [
+import { TaskEntity } from '@ds-makersun/dozen/lib/atomic/organisms/TaskList/TaskList';
+
+const tasks: TaskEntity[] = [
   {
     id: '1',
     label: 'Escribir a gaitero del grupo musical',
     state: 'active',
+    isDragging: false,
   },
   {
     id: '2',
     label: 'Ir a buscar mi salud a donde la perdí',
     state: 'new',
+    isDragging: false,
   },
   {
     id: '3',
     label: 'Liberarme de la pasión',
     state: 'active',
+    isDragging: false,
   },
 ];
 
+type TaskListState = 'reorder' | 'complete-tasks';
+
 function App() {
-  const [taskListState, setTaskListState] = useState('complete-tasks');
+  const [taskListState, setTaskListState] =
+    useState<TaskListState>('complete-tasks');
   return (
     <div>
       <Greeting label="Bienvenido 👋 Manuel Martínez" width={200} />
